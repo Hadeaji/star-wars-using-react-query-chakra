@@ -1,16 +1,18 @@
 import React from 'react';
+import { Button, ButtonGroup } from "@chakra-ui/react"
+
 
 const Header = ({setEndPoint}) =>{
     return(
-        <div>
-            <button onClick = {()=> setEndPoint('people')}>
+        <ButtonGroup colorScheme="teal" spacing="4" px="40px" py="20px">
+            <Button size="md" onClick = {()=> setEndPoint('people')}>
                 People
-            </button>
+            </Button>
 
-            <button onClick={()=> setEndPoint('planets')}>
+            <Button size="md" onClick={()=> setEndPoint('planets')}>
                 Planets
-            </button>
-        </div>
+            </Button>
+        </ButtonGroup >
     )
 };
 
