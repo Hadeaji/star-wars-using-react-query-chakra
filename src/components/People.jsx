@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Flex, Spacer, Button,Text,Box, Spinner } from "@chakra-ui/react";
+import { Flex, Button,Text,Box, Spinner } from "@chakra-ui/react";
 import Person from './Person'
+import "../assets/box.css"
 
 const getPlanets = async ({queryKey}) => {
     const [key, page] = queryKey
+    console.log(key);
     const data = await fetch(`https://swapi.dev/api/people/?page=${page}`)
     return data.json()
 };
@@ -29,9 +31,9 @@ const People = () => {
                 People
             </Text>
 
-            <Flex wrap="wrap" w="75%" m="0 auto">
-                {data.results.map(person => <><Box m="20px" minWidth="150px" bg="whitesmoke" borderRadius="10px" p="15px" key={person.name}><Person  person={person} /></Box><Spacer /></>)}
-            </Flex>
+            <div className="mm">
+                {data.results.map(person => <Box m="20px" minWidth="150px" bg="whitesmoke" borderRadius="10px" p="15px" key={person.name}><Person  person={person} /></Box>)}
+            </div>
 
             <Flex justifyContent="center" mt="20px">
                 <Box>
