@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Flex, Spacer, Button, ButtonGroup,Text,Box } from "@chakra-ui/react";
+import { Flex, Spacer, Button, ButtonGroup,Text,Box, Spinner } from "@chakra-ui/react";
 import Person from './Person'
 
 const getPlanets = async ({queryKey}) => {
@@ -15,7 +15,7 @@ const People = () => {
     const { data, isLoading, isError, error } =  useQuery(query, getPlanets)
     // console.log(data)
     if (isLoading){
-        return <div>Loading...</div>
+        return <div><Spinner />  Loading...</div>
     }
     if (isError) {
         return <div>{error.message}</div>

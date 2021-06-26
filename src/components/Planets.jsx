@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {  useQuery } from 'react-query';
+import { Flex, Spacer, Button, ButtonGroup,Text,Box, Spinner } from "@chakra-ui/react";
 
 import Planet from './Planet'
 
@@ -20,7 +21,7 @@ const Planets = () => {
 
     if (isLoading) {
        return (<div>
-            Loading...
+           <Spinner /> Loading...
         </div>)
     }
     if (isError) {
@@ -31,27 +32,35 @@ const Planets = () => {
     if (data){
     return (
         
-        <div>
-            <h1>
+        <Box>
+            <Text fontSize="35px" color="teal" textAlign="center" mb="30px">
                 Planets
-            </h1>
-            <button onClick={()=> { setpage(Math.max(pageNum-1 , 1))}} disabled = {pageNum === 1}>
-                 Previous
-            </button>
-                <span>
-                    {`Page No: ${pageNum}`}
-                </span>
-            <button onClick={()=> { setpage(Math.min(pageNum+1 , data.count/10))}} disabled = {pageNum === data.count/10}>
-                next
-            </button>
+            </Text>
+            <Flex wrap="wrap" w="75%" m="0 auto">
             {data.results.map((planet) => {
                 return (
-                    <div key = {planet.name}>
+                    <Box key = {planet.name} m="20px" minWidth="150px" bg="whitesmoke" borderRadius="10px" p="15px">
                         <Planet planet = {planet} />
-                    </div>
+                    </Box>
                 )
             })}
-        </div>
+
+            </Flex>
+            <Flex justifyContent="center" mt="20px">
+                <Box>
+
+            <Button width="150px" m='10px' onClick={()=> { setpage(Math.max(pageNum-1 , 1))}} disabled = {pageNum === 1}>
+                 Previous
+            </Button>
+                <Text m="10px" display="inline">
+                    {`Page No: ${pageNum}`}
+                </Text>
+            <Button width="150px" m="10px" onClick={()=> { setpage(Math.min(pageNum+1 , data.count/10))}} disabled = {pageNum === data.count/10}>
+                next
+            </Button>
+                </Box>
+            </Flex>
+        </Box>
     )}
     else{
         return(

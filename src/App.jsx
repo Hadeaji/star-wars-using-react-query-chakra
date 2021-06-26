@@ -11,7 +11,7 @@ const App = () => {
     const queryClient = new QueryClient()
     return (
         <ChakraProvider>
-            <Flex direction="column">
+            <Flex direction="column" >
                 <Heading colorScheme="teal" m="40px" alignSelf="center">
                     The Star Wars Fans
                 </Heading>
