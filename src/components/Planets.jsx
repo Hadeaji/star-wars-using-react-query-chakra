@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {  useQuery } from 'react-query';
-import { Flex, Spacer, Button, ButtonGroup,Text,Box, Spinner } from "@chakra-ui/react";
+import { Flex, Button,Text,Box, Spinner } from "@chakra-ui/react";
 import "../assets/box.css"
 import Planet from './Planet'
 

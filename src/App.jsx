@@ -3,7 +3,7 @@ import { QueryClientProvider, QueryClient } from 'react-query';
 import { ChakraProvider } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
 import Header from './components/Header';
-import { Flex, Spacer, Box  } from "@chakra-ui/react"
+import { Flex, Box  } from "@chakra-ui/react"
 import People from './components/People';
 import Planets from './components/Planets'
 const App = () => {

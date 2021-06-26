@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Flex, Spacer, Button, ButtonGroup,Text,Box, Spinner } from "@chakra-ui/react";
+import { Flex, Spacer, Button,Text,Box, Spinner } from "@chakra-ui/react";
 import Person from './Person'
 
 const getPlanets = async ({queryKey}) => {

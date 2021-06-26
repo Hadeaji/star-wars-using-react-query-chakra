@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Spacer, Button, ButtonGroup,Text,Box, Spinner } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 const Person = ({person}) =>{
     return (
