@@ -15,7 +15,9 @@ const People = () => {
     const { data, isLoading, isError, error } =  useQuery(query, getPlanets)
     // console.log(data)
     if (isLoading){
-        return <div><Spinner />  Loading...</div>
+        return(<Flex direction="column" justifyContent="center" alignItems="center" >
+        <Spinner size="xl" margin="30px" /> Loading...
+     </Flex>)
     }
     if (isError) {
         return <div>{error.message}</div>

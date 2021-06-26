@@ -11,24 +11,26 @@ const App = () => {
     const queryClient = new QueryClient()
     return (
         <ChakraProvider>
-            <Flex direction="column" >
-                <Heading colorScheme="teal" m="40px" alignSelf="center">
-                    The Star Wars Fans
-                </Heading>
-                <Box alignSelf="center">
-                    <Header setEndPoint={setEndPoint}/>
-                </Box>
-                <Box m="10">
-                    {endPoint === 'people' ?
-                        <QueryClientProvider client = {queryClient}>
-                            <People />
-                        </QueryClientProvider>
-                        : <QueryClientProvider client = {queryClient}>
-                            <Planets />
-                        </QueryClientProvider>
-                    }
-                </Box>
-            </Flex>
+            <Box bg="blackAlpha.200" minHeight="100vh">
+                <Flex direction="column" >
+                    <Heading colorScheme="teal" m="40px" alignSelf="center">
+                        The Star Wars Fans
+                    </Heading>
+                    <Box alignSelf="center">
+                        <Header setEndPoint={setEndPoint}/>
+                    </Box>
+                    <Box m="10">
+                        {endPoint === 'people' ?
+                            <QueryClientProvider client = {queryClient}>
+                                <People />
+                            </QueryClientProvider>
+                            : <QueryClientProvider client = {queryClient}>
+                                <Planets />
+                            </QueryClientProvider>
+                        }
+                    </Box>
+                </Flex>
+            </Box>
         </ChakraProvider>
     )
 }

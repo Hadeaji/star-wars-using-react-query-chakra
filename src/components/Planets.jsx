@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {  useQuery } from 'react-query';
 import { Flex, Spacer, Button, ButtonGroup,Text,Box, Spinner } from "@chakra-ui/react";
-
+import "../assets/box.css"
 import Planet from './Planet'
 
 const getPlanets = async ({queryKey}) => {
@@ -20,9 +20,9 @@ const Planets = () => {
 
 
     if (isLoading) {
-       return (<div>
-           <Spinner /> Loading...
-        </div>)
+       return (<Flex direction="column" justifyContent="center" alignItems="center" >
+           <Spinner size="xl" margin="30px" /> Loading...
+        </Flex>)
     }
     if (isError) {
        return (<div>
@@ -36,7 +36,7 @@ const Planets = () => {
             <Text fontSize="35px" color="teal" textAlign="center" mb="30px">
                 Planets
             </Text>
-            <Flex wrap="wrap" w="75%" m="0 auto">
+            <div className="mm">
             {data.results.map((planet) => {
                 return (
                     <Box key = {planet.name} m="20px" minWidth="150px" bg="whitesmoke" borderRadius="10px" p="15px">
@@ -45,7 +45,7 @@ const Planets = () => {
                 )
             })}
 
-            </Flex>
+            </div>
             <Flex justifyContent="center" mt="20px">
                 <Box>
 

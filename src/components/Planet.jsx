@@ -1,18 +1,19 @@
 import React from 'react';
+import { Flex, Spacer, Button, ButtonGroup,Text,Box, Spinner } from "@chakra-ui/react";
 
 const Planet = ({planet}) => {
     return(
         <div>
-            <h3>
+            <Text fontSize="18px" fontFamily="cursive" color="teal.800" fontWeight="bold">
                 {planet.name}
-            </h3>
+            </Text>
             
-            <h4>
-                {planet.climate}
-            </h4>
-            <h4>
-                {planet.terrain}
-            </h4>
+            <Text fontSize="16px" fontFamily="cursive" color="teal.400">
+                <span style={{color: "grey"}}>Climate: </span> {planet.climate}
+            </Text>
+            <Text fontSize="16px" fontFamily="cursive" color="teal.400">
+                <span style={{color: "grey"}}>Terrain: </span>{planet.terrain}
+            </Text>
         </div>
     )
 }

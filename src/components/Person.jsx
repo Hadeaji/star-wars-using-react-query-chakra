@@ -1,17 +1,18 @@
 import React from 'react';
+import { Flex, Spacer, Button, ButtonGroup,Text,Box, Spinner } from "@chakra-ui/react";
 
 const Person = ({person}) =>{
     return (
         <div>
-            <h3>
+            <Text fontSize="18px" fontFamily="cursive" color="teal.800" fontWeight="bold">
                 {person.name}
-            </h3>
-            <h4>
-                {person.eye_color}
-            </h4>
-            <h4>
-                {person.height}
-            </h4>
+            </Text>
+            <Text fontSize="16px" fontFamily="cursive" color="teal.400">
+                <span style={{color: "grey"}}>Eye color: </span> {person.eye_color}
+            </Text>
+            <Text fontSize="16px" fontFamily="cursive" color="teal.400">
+                <span style={{color: "grey"}}>height:</span> {person.height}
+            </Text>
         </div>
     )
 };
